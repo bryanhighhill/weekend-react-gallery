@@ -35,13 +35,16 @@ function GalleryItem({image}) {
     } else {
         return (
             (<>
-                <div 
+                <div class="container">
+                    <img 
+                    src={image.path}
                     onClick={
                         () => {toggleDescription(image.description)}     
                     }
-                    class="img-clicked">
-                        {image.description}
+                    class="img-clicked"
+                    alt={image.description}/>
                     <br />
+                    <p class="description">{image.description}</p>
                     likes: {image.likes}
                     <br />
                     <br />
