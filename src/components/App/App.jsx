@@ -35,7 +35,6 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList galleryProp={gallery}/>
-        <img src="images/goat_small.jpg"/>
       </div>
     );
 }
