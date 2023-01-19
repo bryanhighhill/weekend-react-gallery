@@ -1,15 +1,20 @@
+import './GalleryItem.css';
+
 //Single image in the gallery
 
 function GalleryItem({image}) {
     return(
         (<>
-            <img src={image.path}/>
-            <br />
-            "{image.description}"
-            <br />
-            likes: {image.likes}
-            <br />
-            <br />
+            <div>
+                <img 
+                src={image.path}
+                class="img"
+                alt={image.description}/>
+                <br />
+                likes: {image.likes}
+                <br />
+                <br />
+            </div>
         </>)
     )
 }

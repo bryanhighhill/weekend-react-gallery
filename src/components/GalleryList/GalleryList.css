@@ -1,0 +1,17 @@
+.img-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    justify-items: center;
+    grid-gap: 20px;
+}
+
+.img-grid:hover > div {
+    opacity: 50%;
+    transition: .4s;
+}
+
+.img-grid > div:hover {
+    opacity: 100%;
+    transition: .4s;
+}
