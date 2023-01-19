@@ -1,3 +1,5 @@
+import GalleryItem from '../GalleryItem/GalleryItem'
+
 //Gallery of images here
 
 function GalleryList ({galleryProp}) {
@@ -9,7 +11,16 @@ function GalleryList ({galleryProp}) {
         
         <div>
             {galleryProp.map(image =>
-                (<img src={image.path}/>)
+                // (<>
+                //     <img src={image.path}/>
+                //     <br />
+                //     "{image.description}"
+                //     <br />
+                //     likes: {image.likes}
+                //     <br />
+                //     <br />
+                // </>)
+                <GalleryItem image={image}/>
                 
             )}
         </div>
