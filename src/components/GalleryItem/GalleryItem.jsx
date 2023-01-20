@@ -26,7 +26,13 @@ function GalleryItem({image}) {
                     class="img"
                     alt={image.description}/>
                     <br />
-                    likes: {image.likes}
+                    <div class="icon">
+                        <button class="button">
+                            <img class="image-fill" src="images/heart_fill.png" alt="heart" width="20" height="20" />
+                            <img class="image-no-fill" src="images/heart_no_fill.png" alt="heart" width="20" height="20" />
+                        </button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;likes: {image.likes}
+                    </div>
                     <br />
                     <br />
                 </div>
