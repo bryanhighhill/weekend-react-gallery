@@ -28,13 +28,31 @@ function App() {
     })
   }
 
+  //AXIOS PUT request - change number of Likes
+  const addLikes = (image) => {
+    console.log('image id in PUT: ', image.id);
+    const id = image.id;
+
+    Axios({
+        method: 'PUT',
+        url: `/gallery/like/${id}`,
+        data: {
+          id: id
+        }
+    })
+    .then((response) => {
+        console.log('response from PUT request: ', response);
+        fetchGallery();
+    })
+  }
+
 
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList galleryProp={gallery}/>
+        <GalleryList galleryProp={gallery} addLikesProp={addLikes}/>
       </div>
     );
 }

@@ -1,14 +1,18 @@
 import react, { useState } from 'react';
 import './GalleryItem.css';
+import Axios from 'axios';
 
 //Single image in the gallery
 
-function GalleryItem({image}) {
+function GalleryItem(props) {
     const [descriptionVisible, setDescriptionVisible] = useState(false);
+
+    //create variables for props
+    let image = props.image;
+    let addLikes = props.addLikesProp;
 
     const toggleDescription = () => {
         console.log('clicked on image: ', image.description);
-
         //set state of descriptionVisible
         setDescriptionVisible(!descriptionVisible);
     }
@@ -27,11 +31,11 @@ function GalleryItem({image}) {
                     alt={image.description}/>
                     <br />
                     <div class="icon">
-                        <button class="button">
+                        <button class="button" onClick={() => addLikes(image)}>
                             <img class="image-fill" src="images/heart_fill.png" alt="heart" width="20" height="20" />
                             <img class="image-no-fill" src="images/heart_no_fill.png" alt="heart" width="20" height="20" />
                         </button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;likes: {image.likes}
+                        likes: {image.likes}
                     </div>
                     <br />
                     <br />
@@ -51,7 +55,13 @@ function GalleryItem({image}) {
                     alt={image.description}/>
                     <br />
                     <p class="description">{image.description}</p>
-                    likes: {image.likes}
+                    <div class="icon">
+                        <button class="button" onClick={() => addLikes(image)}>
+                            <img class="image-fill" src="images/heart_fill.png" alt="heart" width="20" height="20" />
+                            <img class="image-no-fill" src="images/heart_no_fill.png" alt="heart" width="20" height="20" />
+                        </button>
+                        likes: {image.likes}
+                    </div>
                     <br />
                     <br />
                 </div>
