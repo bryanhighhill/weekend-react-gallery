@@ -62,7 +62,9 @@ function GalleryItem(props) {
                             <img class="image-fill" src="images/heart_fill.png" alt="heart" width="20" height="20" />
                             <img class="image-no-fill" src="images/heart_no_fill.png" alt="heart" width="20" height="20" />
                         </button>
-                        likes: {image.likes}
+                        <div class="likes">
+                            likes: {image.likes}
+                        </div>
                     </div>
                     <br />
                     <br />
