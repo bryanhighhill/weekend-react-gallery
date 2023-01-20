@@ -65,3 +65,8 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.likes {
+    text-align: right;
+    padding-right: 18px;
+}
+
