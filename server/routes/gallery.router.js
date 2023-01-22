@@ -8,20 +8,33 @@ const pool = require('../modules/pool');
 // PUT Route
 router.put('/like/:id', (req, res) => {
     console.log('req.params in PUT: ', req.params);
-    const galleryId = req.params.id;
-    for(const galleryItem of galleryItems) {
-        if(galleryItem.id == galleryId) {
-            galleryItem.likes += 1;
-        }
-    }
-    res.sendStatus(200);
+    let queryText = 'UPDATE "images" SET "likes" = "likes" + 1 WHERE "id" = $1'
+    pool.query(queryText, [req.params.id])
+    .then(() => {
+        res.sendStatus(200);
+    })
+    .catch((error) => {
+        console.log('error with put request to db: ', error);
+        res.sendStatus(500);
+    })
 }); // END PUT Route
 
+router.post('/', (req, res) => {
+    let queryText = 'INSERT INTO "images" ("path", "description") VALUES  ($1,$2);';
+    pool.query(queryText, [req.body.url, req.body.description])
+    .then(() => {
+        res.sendStatus(201);
+    })
+    .catch((error) => {
+        console.log('error with POST request to db: ', error);
+        res.sendStatus(500);
+    })
+})
 
 // GET Route
 router.get('/', (req, res) => {
     // res.send(galleryItems);
-    let queryText = 'SELECT * from images;';
+    let queryText = 'SELECT * from "images" ORDER BY "id" asc;';
     pool.query(queryText)
     .then((result) => {
         console.log('results from DB', result);

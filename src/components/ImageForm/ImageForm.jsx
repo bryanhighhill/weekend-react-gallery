@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-const ImageForm = () => {
+const ImageForm = ({postImage}) => {
     const [url, setUrl] = useState('');
     const [description, setDescription] = useState('');
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        postImage(url, description);
+    }
 
     return (
         <>
             <h2>Add Image</h2>
             {/* post request function called here */}
-            <form onSubmit={() => {console.log('form submitted')}}>
+            <form onSubmit={onSubmit}>
 
                 {/* form needs 2 inputs: URL of image, description of image */}
                 <label htmlFor="url">URL: </label>
