@@ -4,6 +4,7 @@ import Axios from 'axios';
 
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
+import ImageForm from '../ImageForm/ImageForm';
 
 function App() {
   //variable to store /gallery data
@@ -28,6 +29,25 @@ function App() {
     })
   }
 
+//AXIOS POST request - post user-generated data to the db
+const postImage = (url, description) => {
+  Axios({
+    method: 'POST',
+    url: '/gallery',
+    data: {
+      url,
+      description,
+    }
+  })
+  .then((response) => {
+    console.log('response from postImage: ', response);
+    fetchGallery();
+  })
+  .catch((error) => {
+    console.log('error with postImage: ', error);
+  })
+}
+
   //AXIOS PUT request - change number of Likes
   const addLikes = (image) => {
     console.log('image id in PUT: ', image.id);
@@ -51,6 +71,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Bryan's Photo Gallery</h1>
+          <ImageForm postImage={postImage}/>
         </header>
         <GalleryList galleryProp={gallery} addLikesProp={addLikes}/>
       </div>

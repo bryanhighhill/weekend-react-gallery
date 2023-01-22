@@ -2,7 +2,7 @@ CREATE TABLE images (
 	id SERIAL PRIMARY KEY,
 	path TEXT NOT NULL,
 	description TEXT NOT NULL,
-	likes INT
+	likes INT NOT NULL DEFAULT 0
 );
 
 INSERT INTO "images" ("path", "description", "likes")
