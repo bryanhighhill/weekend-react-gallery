@@ -4,7 +4,7 @@ import './GalleryList.css';
 //Gallery of images here
 const GalleryList = ({addLikesProp, galleryProp}) => (
     /* Iterate the list of gallery data */
-    <div class="img-grid">
+    <div className="img-grid">
         {galleryProp.map(image =>
             <GalleryItem image={image} addLikesProp={addLikesProp}/>
         )}

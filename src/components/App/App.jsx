@@ -4,6 +4,7 @@ import Axios from 'axios';
 
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
+import ImageForm from '../ImageForm/ImageForm';
 
 function App() {
   //variable to store /gallery data
@@ -51,6 +52,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Bryan's Photo Gallery</h1>
+          <ImageForm />
         </header>
         <GalleryList galleryProp={gallery} addLikesProp={addLikes}/>
       </div>
