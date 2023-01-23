@@ -2,4 +2,12 @@
     background-color: rgb(255, 227, 150);
     border-radius: 12px;
     border: none;
+    padding: 10px;
+}
+
+.submit-image-button {
+    background-color: rgb(196, 240, 159);
+    border-radius: 12px;
+    border: none;
+    padding: 10px;
 }
