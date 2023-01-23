@@ -2,11 +2,11 @@ import GalleryItem from '../GalleryItem/GalleryItem'
 import './GalleryList.css';
 
 //Gallery of images here
-const GalleryList = ({addLikesProp, galleryProp}) => (
+const GalleryList = ({addLikes, gallery, deleteImage}) => (
     /* Iterate the list of gallery data */
     <div className="img-grid">
-        {galleryProp.map(image =>
-            <GalleryItem image={image} addLikesProp={addLikesProp}/>
+        {gallery.map(image =>
+            <GalleryItem image={image} addLikes={addLikes} deleteImage={deleteImage}/>
         )}
     </div>
         
