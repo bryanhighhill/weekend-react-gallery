@@ -91,6 +91,7 @@ const postImage = (url, description) => {
           <h1 className="App-title">Bryan's Photo Gallery</h1>
           <ImageForm postImage={postImage}/>
         </header>
+        <br />
         <GalleryList gallery={gallery} addLikes={addLikes} deleteImage={deleteImage}/>
       </div>
     );
