@@ -24,7 +24,9 @@ const ImageForm = ({postImage}) => {
     const onSubmit = (event) => {
         event.preventDefault();
         if (!isInvalid(url, description)) {
-        postImage(url, description)
+        postImage(url, description);
+        setDescription('');
+        setUrl('');        
         }
     }
 

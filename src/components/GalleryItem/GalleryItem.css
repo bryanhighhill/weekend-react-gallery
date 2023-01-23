@@ -76,3 +76,8 @@ body {
     padding: 10px;
 }
 
+.delete-button:hover {
+    background-color: rgb(7, 7, 7);
+    transition: .5s;
+}
+
