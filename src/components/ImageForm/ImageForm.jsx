@@ -5,10 +5,27 @@ const ImageForm = ({postImage}) => {
     const [url, setUrl] = useState('');
     const [description, setDescription] = useState('');
     const [formVisible, setFormVisible] = useState(false);
+    
+    const isValid = (url, description) => {
+        if (url.length <= 0 && description.length <= 0) {
+            alert('must enter a URL and description')
+            return;
+        }
+        if (url.length <= 0) {
+            alert('must enter a URL')
+            return;
+        }
+        if (description.length <= 0){
+            alert('must enter a description')
+            return;
+        }
+    }
 
     const onSubmit = (event) => {
         event.preventDefault();
+        if (isValid(url, description)) {
         postImage(url, description);
+        }
     }
 
     return (
