@@ -1,0 +1,11 @@
+.form-visible-button {
+    background-color: rgb(255, 227, 150);
+    border-radius: 12px;
+    border: none;
+}
+
+.submit-image-button {
+    background-color: rgb(196, 240, 159);
+    border-radius: 12px;
+    border: none;
+}
