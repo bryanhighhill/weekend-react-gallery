@@ -6,7 +6,7 @@ const ImageForm = ({postImage}) => {
     const [description, setDescription] = useState('');
     const [formVisible, setFormVisible] = useState(false);
     
-    const isValid = (url, description) => {
+    const isInvalid = (url, description) => {
         if (url.length <= 0 && description.length <= 0) {
             alert('must enter a URL and description')
             return;
@@ -23,8 +23,8 @@ const ImageForm = ({postImage}) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        if (isValid(url, description)) {
-        postImage(url, description);
+        if (!isInvalid(url, description)) {
+        postImage(url, description)
         }
     }
 
