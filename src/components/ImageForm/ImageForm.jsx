@@ -13,9 +13,14 @@ const ImageForm = ({postImage}) => {
 
     return (
         <>
-            <button className="add-image-button" onClick={() => setFormVisible(!formVisible)}/>
-            <div class="image-form">
-                <h2>Add Image</h2>
+            <button 
+                className="form-visible-button"
+                onClick={() => {setFormVisible(!formVisible)}}
+            >
+                Add Image Form
+            </button>
+            {formVisible && <div className="image-form">
+                <br />
                 {/* post request function called here */}
                 <form onSubmit={onSubmit}>
 
@@ -28,11 +33,9 @@ const ImageForm = ({postImage}) => {
                         name="url"
                         value={url} 
                         placeholder="image url"
-                        class="input"
                         onChange={(event) => setUrl(event.target.value)}
                     />
-                    <br />
-
+                    &nbsp; &nbsp; &nbsp; &nbsp; 
                     <label htmlFor="description">Description: </label>
 
                     <input 
@@ -41,14 +44,16 @@ const ImageForm = ({postImage}) => {
                         name="description"
                         value={description} 
                         placeholder="image description"
-                        class="input"
                         onChange={(event) => setDescription(event.target.value)}
-                    />
-                    <br />
-
-                    <button type="submit" class="submit">Add New Image</button>
+                    /> 
+                    &nbsp; &nbsp; &nbsp; &nbsp; 
+                    <button 
+                        type="submit"
+                        className="submit-image-button"
+                    >
+                        Submit Image</button>
                 </form>
-            </div>
+            </div>}
         </>
     )
 }
