@@ -66,6 +66,24 @@ const postImage = (url, description) => {
     })
   }
 
+  //AXIOS DELETE request - change number of Likes
+  const deleteImage = (image) => {
+    console.log('in Delete request: ', image.id);
+    const id = image.id;
+
+    Axios({
+        method: 'DELETE',
+        url: `/gallery/${id}`,
+        data: {
+          id: id
+        }
+    })
+    .then((response) => {
+        console.log('response from PUT request: ', response);
+        fetchGallery();
+    })
+  }
+
 
     return (
       <div className="App">
@@ -73,7 +91,7 @@ const postImage = (url, description) => {
           <h1 className="App-title">Bryan's Photo Gallery</h1>
           <ImageForm postImage={postImage}/>
         </header>
-        <GalleryList galleryProp={gallery} addLikesProp={addLikes}/>
+        <GalleryList gallery={gallery} addLikes={addLikes}/>
       </div>
     );
 }

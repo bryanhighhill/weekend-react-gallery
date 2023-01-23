@@ -3,7 +3,7 @@ import './GalleryItem.css';
 
 //Single image in the gallery
 
-const GalleryItem = ({addLikesProp, image}) => {
+const GalleryItem = ({addLikes, image}) => {
     const [descriptionVisible, setDescriptionVisible] = useState(false);
 
     //render whether to display image or image description
@@ -19,7 +19,7 @@ const GalleryItem = ({addLikesProp, image}) => {
                 <br />
                 {descriptionVisible && <p className="description">{image.description}</p>}
                 <div className="icon">
-                    <button className="button" onClick={() => addLikesProp(image)}>
+                    <button className="button" onClick={() => addLikes(image)}>
                         <img className="image-fill" src="images/heart_fill.png" alt="heart" width="20" height="20" />
                         <img className="image-no-fill" src="images/heart_no_fill.png" alt="heart" width="20" height="20" />
                     </button>
