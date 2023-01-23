@@ -9,15 +9,15 @@ const ImageForm = ({postImage}) => {
     const isInvalid = (url, description) => {
         if (url.length <= 0 && description.length <= 0) {
             alert('must enter a URL and description')
-            return;
+            return true;
         }
         if (url.length <= 0) {
             alert('must enter a URL')
-            return;
+            return true;
         }
         if (description.length <= 0){
             alert('must enter a description')
-            return;
+            return true;
         }
     }
 
