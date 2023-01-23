@@ -3,7 +3,7 @@ import './GalleryItem.css';
 
 //Single image in the gallery
 
-const GalleryItem = ({addLikes, image}) => {
+const GalleryItem = ({addLikes, image, deleteImage}) => {
     const [descriptionVisible, setDescriptionVisible] = useState(false);
 
     //render whether to display image or image description
@@ -25,6 +25,11 @@ const GalleryItem = ({addLikes, image}) => {
                     </button>
                     <div className="likes">
                         likes: {image.likes}
+                    </div>
+                    <div>
+                        <button className="delete-button" onClick={() => deleteImage(image)}>
+                            Delete Image
+                        </button>
                     </div>
                 </div>
                 <br />
