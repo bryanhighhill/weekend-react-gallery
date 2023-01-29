@@ -79,7 +79,7 @@ const postImage = (url, description) => {
         }
     })
     .then((response) => {
-        console.log('response from PUT request: ', response);
+        console.log('response from DELETE request: ', response);
         fetchGallery();
     })
   }
